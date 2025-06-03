@@ -12,7 +12,6 @@ jobs:
 
 jobs:
   second_job:
-    
     runs-on: ubuntu-latest
 
     steps:
