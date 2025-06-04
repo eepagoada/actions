@@ -9,7 +9,8 @@ jobs:
     name: Primer Job
     runs-on: ubuntu-latest
 
-    outputs: ${{step_1.outputs.my_variable}}
+    outputs: 
+      salida: ${{steps.step_1.outputs.my_variable}}
 
     steps:
       - name: Hola Mundo
