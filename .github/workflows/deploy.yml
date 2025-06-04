@@ -6,9 +6,12 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
 
+    env:
+      NAME: ENRRIN PAGOADA
+
     steps:
       - name: Hola Mundo
-        run: echo "Hola Mundo ${{github.ref}}"      
+        run: echo "Hola Mundo $NAME"      
 
   second_job:
     if: ${{github.ref == 'refs/heads/main'}}
