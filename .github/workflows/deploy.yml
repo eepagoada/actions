@@ -9,6 +9,8 @@ jobs:
     name: Primer Job
     runs-on: ubuntu-latest
 
+    outputs: ${{step_1.outputs.my_variable}}
+
     steps:
       - name: Hola Mundo
         run: echo "Hola Mundo $NAME"  
@@ -32,6 +34,9 @@ jobs:
     needs: first_job
     runs-on: ubuntu-latest
 
+    env:
+      SALIDA: ${{ needs.first_job.outputs}}
+
     steps:
       - name: Hola Mundo
-        run: echo "Hola Mundo Segundo $NAME"
+        run: echo "Hola Mundo Segundo $SALIDA"
