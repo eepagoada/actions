@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SALIDA: ${{ needs.first_job.outputs}}
+      SALIDA: ${{ needs.first_job.salida}}
 
     steps:
       - name: Hola Mundo
