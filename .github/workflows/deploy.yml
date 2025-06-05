@@ -72,3 +72,14 @@ jobs:
       - name: "Todo funciona sin needs"
         run: ls -l
 
+  sixth_job:
+      name: Estrategia
+      runs-on: ubuntu-latest
+
+      strategy:
+        matrix:
+          message: [ "Hola Mundo", "Hello World"]
+
+      steps:
+        - name: "Imprimir Mensaje"
+          run: echo "{{ matrix.message }}"
