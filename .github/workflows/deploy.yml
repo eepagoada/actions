@@ -41,3 +41,31 @@ jobs:
     steps:
       - name: Hola Mundo
         run: echo "Hola Mundo Segundo $SALIDA"
+
+  third_job:
+    name: Tercer Job
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Paso 1 - Generar Archivo
+        run: echo "Hola Como estas Enrrin" >> hola.txt
+      
+      - name: Paso 2 - Subir Archivo
+        uses: actions/upload-artifact@v4
+        with:
+          name: file-log
+          path: hola.txt
+
+  fourth_job:
+    name: "Cuarto Job"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Paso 1 - Recuperar Archivo de Anterior Job"
+        uses: actions/download-artifact@v4
+        with:
+          name: file-log
+
+      - name: "Paso 2 - Visualizar Archivo"
+        run: cat hola.txt
+
