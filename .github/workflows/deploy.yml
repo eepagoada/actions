@@ -58,6 +58,7 @@ jobs:
 
   fourth_job:
     name: "Cuarto Job"
+    needs: third_job
     runs-on: ubuntu-latest
 
     steps:
@@ -69,7 +70,7 @@ jobs:
       - name: "Paso 2 - Visualizar Archivo"
         run: cat hola.txt
 
-      - name: "Todo funciona sin needs"
+      - name: "Solo fue casualidad"
         run: ls -l
 
   sixth_job:
@@ -82,4 +83,4 @@ jobs:
 
       steps:
         - name: "Imprimir Mensaje"
-          run: echo "{{ matrix.message }}"
+          run: echo "${{ matrix.message }}"
