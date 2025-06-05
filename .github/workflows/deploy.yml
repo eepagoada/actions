@@ -69,3 +69,6 @@ jobs:
       - name: "Paso 2 - Visualizar Archivo"
         run: cat hola.txt
 
+      - name: "Todo funciona sin needs"
+        run: ls -l
+
