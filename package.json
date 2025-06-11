@@ -1,5 +1,5 @@
 {
-  "name": "github_actions",
+  "name": "@eepagoada/github_actions",
   "version": "1.0.0",
   "description": "Funciones de estadistica y generación de graficas de Node.js",
   "main": "index.js",
